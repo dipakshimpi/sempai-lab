@@ -38,46 +38,37 @@ This project is designed for users who want the best of both worlds.
 | **TTS (Text-to-Speech)** | ElevenLabs | Kokoro-82M (ONNX) |
 | **Port** | 5000 | 8000 |
 
-## 📂 Folder Structure
+## 📂 Project Directory Structure
 
+```text
 OmniVoice-Hybrid/
-├── 📄 .gitignore               # Root ignore file (Crucial!)
-├── 📄 README.md                # Project Documentation
+├── 📄 .gitignore                # Root ignore file (Stops heavy files)
+├── 📄 README.md                 # Project Documentation
 │
-├── ⚛️ frontend/                # React Application
-│   ├── 📁 node_modules/        # (Ignored by Git)
-│   ├── 📁 public/              # Static assets (icons, etc.)
-│   ├── 📁 src/                 # Source Code
-│   │   ├── 📁 hooks/           # Custom Logic
-│   │   │   ├── useRecorder.js  # Mic handling
-│   │   │   └── useHybridVoice.js # Cloud API logic
-│   │   ├── App.jsx             # Main UI Component
-│   │   ├── App.css             # Styles
-│   │   ├── main.jsx            # React Entry Point
-│   │   └── index.css           # Global Styles
-│   ├── 📄 .eslintrc.cjs        # Linting config
-│   ├── 📄 index.html           # HTML Template
-│   ├── 📄 package.json         # Node Dependencies
-│   ├── 📄 package-lock.json    # Version Locking
-│   └── 📄 vite.config.js       # Vite Bundler Config
+├── ⚛️ frontend/                 # React Frontend (Vite)
+│   ├── 📁 public/               # Static Assets
+│   ├── 📁 src/                  # Source Code
+│   │   ├── 📁 hooks/            # Custom Logic (Audio/API)
+│   │   │   ├── useRecorder.js   # Microphone Management
+│   │   │   └── useHybridVoice.js# Switching Logic
+│   │   ├── App.jsx              # Main UI Interface
+│   │   └── main.jsx             # Entry Point
+│   ├── 📄 package.json          # Frontend Dependencies
+│   └── 📄 vite.config.js        # Vite Configuration
 │
-├── ☁️ backend/                 # Node.js Cloud Server
-│   ├── 📁 node_modules/        # (Ignored by Git)
+├── ☁️ backend/                  # Node.js Cloud Server (Port 5000)
 │   ├── 📁 src/
-│   │   ├── 📁 services/        # ElevenLabs/Groq logic
-│   │   └── server.js           # Express Entry Point
-│   ├── 📄 .env                 # API KEYS (Ignored by Git)
-│   ├── 📄 package.json         # Backend Dependencies
-│   └── 📄 package-lock.json
+│   │   ├── 📁 services/         # ElevenLabs & Groq Integration
+│   │   └── server.js            # Express Server Entry
+│   ├── 📄 .env                  # API Keys (PRIVATE)
+│   └── 📄 package.json          # Backend Dependencies
 │
-└── 🐍 backend-local/           # Python Local Server
-    ├── 📁 .venv/               # Virtual Env (Ignored by Git)
-    ├── 📁 models/              # AI Models (Ignored by Git)
-    ├── 📁 services/            # Whisper/Kokoro Logic
-    ├── 📁 temp_audio/          # Saved WAV files
-    ├── 📁 utils/               # Cleanup tools
-    ├── 📄 main.py              # FastAPI Entry Point
-    └── 📄 requirements.txt     # Python Dependencies List
+└── 🐍 backend-local/            # Python Local Server (Port 8000)
+    ├── 📁 services/             # Whisper & Kokoro Logic
+    ├── 📁 temp_audio/           # Temporary Audio Storage
+    ├── 📁 models/               # AI Models (Manual Setup Required)
+    ├── 📄 main.py               # FastAPI Server Entry
+    └── 📄 requirements.txt      # Python Dependencies List
 
 
 
