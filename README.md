@@ -72,12 +72,15 @@ OmniVoice-Hybrid/
 
 
 
-📥 How to Clone & Run
-If you want to run this project on your local machine, follow these steps:
+---
 
-1. Clone the Repository
+## 📥 How to Clone & Run
+
+Follow these steps to set up the project on your local machine:
+
+### 1. Clone the Repository
 Open your terminal and run:
-
+```bash
 git clone [https://github.com/dipakshimpi/sempai-lab.git](https://github.com/dipakshimpi/sempai-lab.git)
 cd sempai-lab
 
@@ -88,15 +91,17 @@ Terminal A (Local Python):
 
 cd backend-local
 python -m venv .venv
-# Windows: .\.venv\Scripts\activate
-pip install fastapi uvicorn faster-whisper kokoro-onnx python-multipart
+# Activate on Windows:
+.\.venv\Scripts\activate
+# Install and Run:
+pip install -r requirements.txt
 python main.py
 
 Terminal B (Cloud Node):
 
 cd backend
 npm install
-# Important: Create a .env file and add your API keys
+# Note: Create a .env file and add your API keys
 npm start
 
 3. Set Up the Frontend
@@ -109,7 +114,7 @@ npm run dev
 🛠️ How to Make Changes (Contribution)
 If you want to modify the project, follow this "Best Practice" workflow:
 
-Create a New Branch: git checkout -b feature/your-feature-name
+git checkout -b feature/your-feature-name
 
 Make your changes: (e.g., change the UI colors in App.jsx or the AI personality in main.py).
 
