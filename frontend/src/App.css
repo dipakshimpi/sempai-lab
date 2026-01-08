@@ -1,0 +1,57 @@
+/* src/App.css */
+:root {
+  --primary: #6366f1;
+  --bg: #0f172a;
+  --text: #f8fafc;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+  background: #1e293b;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  width: 400px;
+}
+
+.mic-button {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: none;
+  background: var(--primary);
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+  margin: 20px 0;
+}
+
+/* The Glowing Effect when recording */
+.recording {
+  animation: pulse 1.5s infinite;
+  background: #ef4444; /* Red color when recording */
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+  70% { box-shadow: 0 0 0 20px rgba(239, 68, 68, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+.status-text {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  margin-top: 10px;
+}
