@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+faster-whisper
+kokoro-onnx
+python-multipart
+soundfile
+numpy
