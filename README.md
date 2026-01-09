@@ -1,130 +1,220 @@
-🎙️ OmniVoice Hybrid AI
+<div align="left">
 
-    Intelligent Voice Assistant with Dual-Engine Processing
-    OmniVoice is a high-performance, hybrid AI assistant that bridges the gap between Cloud-based intelligence and Local privacy. It allows users to toggle seamlessly between hyper-realistic cloud voices and completely private local execution.
+<h1>🎙️ OmniVoice</h1>
+<h3>Hybrid Voice AI Engine — Cloud Power × Local Privacy</h3>
 
+<p>
+Talk to AI. Choose where your intelligence runs.
+<br>
+<b>Cloud-grade voices. Local-first privacy. One seamless experience.</b>
+</p>
 
-🌟 Features
-    
-    🔄 Hybrid Execution Engine
-    Cloud Mode: Ultra-fast processing using Groq (Whisper-v3) for speech and ElevenLabs for hyper-realistic multilingual voices.
+<hr>
 
-    Local Mode: 100% private, offline-capable processing using Faster-Whisper and Kokoro-82M.
+<h2>🚀 What is OmniVoice?</h2>
 
-🌍 Multilingual Support
-    English: Full support on both Cloud and Local engines.
+<p>
+OmniVoice is a <b>hybrid voice AI platform</b> that allows users to speak naturally with artificial intelligence while dynamically choosing where the intelligence runs — either in the <b>cloud</b> or <b>locally on their own machine</b>.
+</p>
 
-    Hindi & Marathi: Optimized via ElevenLabs Multilingual v2 for perfect phonetics and natural accents.
+<p>
+Unlike traditional voice assistants that force all data into the cloud, OmniVoice gives users full control:
+</p>
 
-🔊 Dynamic Asset Pipeline
-    
-    Shared Audio Storage: Generated AI voices are saved directly to frontend/public/audio/ for low-latency playback.
+<ul>
+  <li>☁️ Cloud AI for premium voices and maximum intelligence</li>
+  <li>🖥️ Local AI for privacy, speed, and offline capability</li>
+</ul>
 
-    Smart Switching: The system automatically selects the best model based on the user's language choice.
+<p>
+The frontend remains identical — only the AI brain changes.
+</p>
 
-🏗️ Architecture
+<hr>
 
-┌──────────────────┐           ┌──────────────────┐
-       │   React (Vite)   │──────────▶│  Node.js Backend │ (Cloud)
-       │    (Frontend)    │◀──────────│   (Port 5000)    │
-       └────────┬─────────┘           └──────────────────┘
-                │                               │
-          Choice Output                  Write Audio to
-          (Local/Cloud)               /frontend/public/audio
-                │                               ▲
-                ▼                               │
-       ┌──────────────────┐           ┌─────────┴────────┐
-       │  FastAPI Python  │──────────▶│  Local AI Models │ (Local)
-       │    (Port 8000)   │◀──────────│ (Whisper/Kokoro) │
-       └──────────────────┘           └──────────────────┘
+<h2>🧠 Why OmniVoice is Different</h2>
 
+<table>
+<tr><th>Cloud-Only AI</th><th>Local-Only AI</th><th>OmniVoice</th></tr>
+<tr><td>High quality</td><td>Private</td><td><b>Both</b></td></tr>
+<tr><td>Scalable</td><td>Offline</td><td><b>Hybrid</b></td></tr>
+<tr><td>Expensive</td><td>Limited</td><td><b>Flexible</b></td></tr>
+<tr><td>Data leaves device</td><td>Data stays local</td><td><b>User decides</b></td></tr>
+</table>
 
-📂 Project Structure
+<hr>
 
-OmniVoice-Hybrid/
-├── ⚛️ frontend/                 # React Frontend (Vite)
-│   ├── 📁 public/audio/         # Shared storage for AI voice output
-│   ├── 📁 src/
-│   │   ├── 📁 hooks/            # useRecorder & useHybridVoice logic
-│   │   └── App.jsx              # Main UI Hub
-│   └── 📄 package.json
-│
-├── ☁️ backend-cloud/            # Node.js + ElevenLabs (Cloud Engine)
-│   ├── 📁 src/services/         # Groq & ElevenLabs integrations
-│   ├── 📄 server.js             # Entry Point (Port 5000)
-│   └── 📄 .env                  # API Keys
-│
-└── 🐍 backend-local/            # Python + Kokoro (Local Engine)
-    ├── 📁 services/             # Local STT & TTS logic
-    ├── 📁 temp_audio/           # Buffer for recordings
-    ├── 📄 main.py               # FastAPI Entry (Port 8000)
-    └── 📄 requirements.txt      # Dependencies
+<h2>⚡ Core Features</h2>
 
+<h3>🔄 Dual AI Engine</h3>
 
-🚀 Getting Started
+<p><b>Cloud Mode</b></p>
+<ul>
+  <li>Speech-to-Text: ElevenLabs</li>
+  <li>LLM: Groq LLaMA</li>
+  <li>Text-to-Speech: ElevenLabs Multilingual</li>
+</ul>
 
+<p><b>Local Mode</b></p>
+<ul>
+  <li>Speech-to-Text: Faster-Whisper</li>
+  <li>LLM: Groq LLaMA</li>
+  <li>Text-to-Speech: Kokoro-82M (ONNX)</li>
+</ul>
 
-Prerequisites
-   
-Node.js (v18+)
-Python (3.10+)
-API Keys: ElevenLabs & Groq
+<p>
+Both engines return:
+</p>
 
+<ul>
+  <li>Transcript</li>
+  <li>AI response</li>
+  <li>Spoken voice</li>
+</ul>
 
-Installation
+<hr>
 
-Clone the Repository
+<h3>🎙️ Voice-First Interface</h3>
+<ul>
+  <li>Browser-based microphone recording</li>
+  <li>Automatic speech recognition</li>
+  <li>Real-time AI replies</li>
+  <li>High-quality AI voice playback</li>
+</ul>
 
-git clone https://github.com/dipakshimpi/sempai-lab.git
-cd sempai-lab
+<hr>
 
-Setup Local Backend (Python)
+<h3>🔊 Unified Audio Pipeline</h3>
 
+<p>
+All generated voices are written to:
+</p>
+
+<pre>frontend/public/audio/</pre>
+
+<p>
+This ensures:
+</p>
+
+<ul>
+  <li>Instant playback</li>
+  <li>No streaming delays</li>
+  <li>Same UI for Cloud and Local</li>
+</ul>
+
+<hr>
+
+<h2>🧬 System Architecture</h2>
+
+<pre>
+User speaks
+   ↓
+React (Vite) UI
+   ↓
+Engine Switch (Cloud / Local)
+   ↓
+useHybridVoice.js
+   ↓
+-----------------------------
+|                           |
+Cloud AI                Local AI
+(Node.js)               (FastAPI)
+Port 5000               Port 8000
+|                           |
+ElevenLabs STT       Faster-Whisper
+|                           |
+Groq LLaMA           Groq LLaMA
+|                           |
+ElevenLabs TTS       Kokoro-82M
+        ↓
+frontend/public/audio
+        ↓
+Browser plays the AI voice
+</pre>
+
+<hr>
+
+<h2>📂 Project Structure</h2>
+
+<pre>
+sempai-lab/
+|
+|-- frontend/
+|   |-- public/audio/
+|   |-- src/
+|       |-- components/
+|       |-- hooks/
+|       |-- services/
+|
+|-- backend-cloud/
+|   |-- services/
+|   |-- routes/
+|   |-- app.js   (Port 5000)
+|
+|-- backend-local/
+|   |-- services/
+|   |-- public/audio/
+|   |-- main.py  (Port 8000)
+|
+|-- README.md
+</pre>
+
+<hr>
+
+<h2>⚙️ Getting Started</h2>
+
+<h3>1. Clone</h3>
+<pre>git clone https://github.com/dipakshimpi/sempai-lab.git
+cd sempai-lab</pre>
+
+<h3>2. Local AI Engine</h3>
+<pre>
 cd backend-local
 python -m venv .venv
-.\.venv\Scripts\activate  # Windows
+.venv\Scripts\activate
 pip install -r requirements.txt
-python main.py
+</pre>
 
-Setup Cloud Backend (Node.js)
+<p>Create <b>.env</b></p>
+<pre>GROQ_API_KEY=your_groq_key</pre>
 
+<pre>python main.py</pre>
+
+<p>Runs on http://localhost:8000</p>
+
+<h3>3. Cloud AI Engine</h3>
+<pre>
 cd backend-cloud
 npm install
-# Create .env with ELEVENLABS_API_KEY and GROQ_API_KEY
-npm start
+</pre>
 
-Setup Frontend (React)
+<p>Create <b>.env</b></p>
+<pre>
+ELEVENLABS_API_KEY=your_key
+GROQ_API_KEY=your_key
+</pre>
 
+<pre>npm start</pre>
+
+<p>Runs on http://localhost:5000</p>
+
+<h3>4. Frontend</h3>
+<pre>
 cd frontend
 npm install
 npm run dev
+</pre>
 
+<p>Open http://localhost:5173</p>
 
-## ⚙️ Configuration
+<hr>
 
-| Variable | Description | Value / Default |
-| :--- | :--- | :--- |
-| **ELEVENLABS_API_KEY** | API Key for high-fidelity TTS (Multilingual v2) | Required (Cloud) |
-| **GROQ_API_KEY** | API Key for ultra-fast Llama-3 and Whisper-v3 | Required (Hybrid) |
-| **PORT_CLOUD** | Node.js backend server port | 5000 |
-| **PORT_LOCAL** | Python/FastAPI backend server port | 8000 |
+<h2>🧑‍💻 Author</h2>
 
+<p>
+<b>Dipak Shimpi</b><br>
+AI Engineer & System Architect<br>
+Building hybrid intelligence systems.
+</p>
 
-⚠️ Troubleshooting
-   
-CORS Errors: Ensure both backends have CORS enabled for the frontend origin (http://localhost:5173).
-FFmpeg Not Found: Ensure FFmpeg is installed and added to your System Path for audio processing.
-Microphone Access: Browsers require localhost or HTTPS to allow microphone usage
-
-
-🛠️ Tech Stack
-
-Frontend: React, Vite, Axios
-Cloud Backend: Node.js, Express, ElevenLabs SDK, Groq SDK
-Local Backend: Python, FastAPI, Faster-Whisper, Kokoro-ONNX
-Styling: Tailwind CSS / CSS3
-
-
-👤 Author
-
-Dipak Shimpi Aspiring AI Developer & Software Architect
+</div>
